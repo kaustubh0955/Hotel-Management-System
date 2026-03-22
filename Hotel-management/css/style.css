@@ -1,0 +1,162 @@
+body{
+font-family:Arial;
+margin:0;
+background:#f5f7fb;
+}
+
+/* Dashboard layout */
+
+.dashboard{
+display:flex;
+height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+width:220px;
+background:#1f2937;
+color:white;
+padding:20px;
+}
+
+.sidebar h2{
+margin-bottom:30px;
+}
+
+.sidebar a{
+display:block;
+color:white;
+text-decoration:none;
+padding:10px;
+margin-bottom:10px;
+border-radius:5px;
+}
+
+.sidebar a:hover{
+background:#3b82f6;
+}
+
+/* Main */
+
+.main{
+flex:1;
+padding:30px;
+}
+
+/* Topbar */
+
+.topbar{
+background:white;
+padding:15px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+margin-bottom:20px;
+}
+
+/* Cards */
+
+.cards{
+display:flex;
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+width:200px;
+}
+
+/* Form container */
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+width:400px;
+margin:auto;
+margin-top:50px;
+}
+
+/* Inputs */
+
+input,select{
+width:100%;
+padding:10px;
+margin-bottom:15px;
+}
+
+/* Buttons */
+
+button{
+background:#2563eb;
+color:white;
+border:none;
+padding:8px 15px;
+cursor:pointer;
+border-radius:5px;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+/* Tables */
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+background:white;
+}
+
+th{
+background:#2563eb;
+color:white;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:10px;
+text-align:center;
+}
+
+/* Dark mode */
+
+.dark{
+background:#111;
+color:white;
+}
+
+.dark .sidebar{
+background:#000;
+}
+
+.dark .card{
+background:#1e1e1e;
+}
+
+.dark table{
+color:white;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.dashboard{
+flex-direction:column;
+}
+
+.sidebar{
+width:100%;
+display:flex;
+overflow:auto;
+}
+
+.cards{
+flex-direction:column;
+}
+
+}

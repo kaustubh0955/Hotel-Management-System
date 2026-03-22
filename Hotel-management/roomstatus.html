@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Room Status</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<div class="sidebar">
+
+<h2>HotelSys</h2>
+
+<a href="admin_dashboard.html">Home</a>
+<a href="reservation.html">Reservation</a>
+<a href="bookings.html">Bookings</a>
+<a href="roomstatus.html">Room Status</a>
+<a href="analytics.html">Analytics</a>
+<a href="support.html">Support</a>
+<a href="#" onclick="logout()">Logout</a>
+
+</div>
+
+<div class="main">
+
+<div class="topbar">
+Room Status
+<button onclick="toggleTheme()">Dark Mode</button>
+</div>
+
+<h2>Hotel Room Availability</h2>
+
+<table>
+
+<tr>
+<th>Room Number</th>
+<th>Room Type</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>101</td>
+<td>Single</td>
+<td>Available</td>
+</tr>
+
+<tr>
+<td>102</td>
+<td>Single</td>
+<td>Booked</td>
+</tr>
+
+<tr>
+<td>201</td>
+<td>Double</td>
+<td>Available</td>
+</tr>
+
+<tr>
+<td>202</td>
+<td>Double</td>
+<td>Booked</td>
+</tr>
+
+<tr>
+<td>301</td>
+<td>Suite</td>
+<td>Available</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<script src="js/theme.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
