@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookings | Lumi Stays</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><span class="brand-badge">L</span><span>Lumi Stays</span></a>
+      <a href="user_dashboard.html">Dashboard</a>
+      <a href="reservation.html">Reserve</a>
+      <a class="active" href="bookings.html">Bookings</a>
+      <a href="history.html">History</a>
+      <a href="billing.html">Billing</a>
+      <a href="support.html">Support</a>
+      <a href="#" data-logout>Logout</a>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div class="topbar-card">Bookings for <strong id="username"></strong></div>
+        <div class="action-row"><button class="icon-btn" onclick="toggleTheme()">☾</button><a class="btn" href="reservation.html">Add booking</a></div>
+      </div>
+      <div class="panel">
+        <div class="section-head" style="margin-bottom:14px;">
+          <div>
+            <h2 class="section-title" style="font-size:30px;">Reservation records</h2>
+            <p class="section-copy">Use search to filter bookings by ID, guest, room, or hotel.</p>
+          </div>
+          <div class="action-row">
+            <div class="price" id="amountCount">₹0</div>
+          </div>
+        </div>
+        <div class="field"><label for="searchBooking">Search bookings</label><input type="text" id="searchBooking" placeholder="Search by booking ID, hotel, guest..."></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>ID</th><th>Hotel</th><th>Room</th><th>Guest</th><th>Check In</th><th>Check Out</th><th>Guests</th><th>Amount</th><th>Status</th></tr>
+            </thead>
+            <tbody id="bookingTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/bookings.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

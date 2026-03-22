@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumi Stays | 5-Star Multi-Branch Hotel Chain</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="top-strip">
+    <div class="container-wide">
+      <div>Five-star hospitality across Goa, Mumbai, Delhi, Jaipur, and Kolkata.</div>
+      <div>24/7 reservations · Concierge · Corporate stays</div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container-wide navbar">
+      <a class="brand" href="index.html">
+        <span class="brand-badge">L</span>
+        <span>Lumi Stays</span>
+      </a>
+      <nav class="nav-links">
+        <a class="active" href="index.html">Home</a>
+        <a href="#hotels">Hotels</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="support.html">Support</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" onclick="toggleTheme()">☾</button>
+        <a class="btn-outline" href="login.html">Login</a>
+        <a class="btn" href="reservation.html">Book a Stay</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container-wide hero-grid">
+      <div class="hero-copy">
+        <div class="hero-badges">
+          <span class="pill">Multi-Branch Chain</span>
+          <span class="pill">Luxury Suites & Villas</span>
+          <span class="pill">Corporate & Leisure Stays</span>
+        </div>
+        <h1>Experience 5-Star luxury across every Lumi destination.</h1>
+        <p>From seafront escapes to skyline suites, Lumi Stays unifies elegant hospitality, premium service, and centralized booking for guests across our flagship hotels.</p>
+        <div class="action-row">
+          <a class="btn" href="reservation.html">Reserve Your Stay</a>
+          <a class="btn-outline" href="login.html">Customer & Admin Login</a>
+        </div>
+
+        <div class="search-panel">
+          <form id="heroSearchForm" class="search-grid">
+            <div class="field">
+              <label for="destination">Destination</label>
+              <select id="destination" name="destination">
+                <option>Goa Seaside Lumi</option>
+                <option>Mumbai Grand Marina</option>
+                <option>Delhi Imperial Heights</option>
+                <option>Jaipur Heritage Royale</option>
+                <option>Kolkata Riverside Palace</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="checkin">Check-In</label>
+              <input type="date" id="checkin" name="checkin" required>
+            </div>
+            <div class="field">
+              <label for="checkout">Check-Out</label>
+              <input type="date" id="checkout" name="checkout" required>
+            </div>
+            <div class="field">
+              <label for="guests">Guests</label>
+              <select id="guests" name="guests">
+                <option>1</option>
+                <option selected>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>&nbsp;</label>
+              <button class="btn" type="submit" style="width:100%">Search Availability</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-image">
+          <div class="hero-floating">
+            <h4>Tonight's featured stay</h4>
+            <p class="muted">Presidential marina suite with private butler, sunset dining, and airport transfer.</p>
+            <div class="price">₹26,500 <span class="muted" style="font-size:14px">/ night</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="hotels">
+    <div class="container-wide">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Signature destinations</h2>
+          <p class="section-copy">Every Lumi branch follows a single luxury service standard while preserving the personality of its location.</p>
+        </div>
+        <a class="btn-outline" href="reservation.html">View all availability</a>
+      </div>
+      <div class="grid-4">
+        <article class="card">
+          <img class="card-cover" src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80" alt="Goa hotel">
+          <div class="card-body"><div class="stars">★★★★★</div><h3>Goa Seaside Lumi</h3><p>Oceanfront suites, beach club dining, and wellness spa rituals.</p></div>
+        </article>
+        <article class="card">
+          <img class="card-cover" src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1200&q=80" alt="Mumbai hotel">
+          <div class="card-body"><div class="stars">★★★★★</div><h3>Mumbai Grand Marina</h3><p>Executive skyline suites designed for premium business and leisure stays.</p></div>
+        </article>
+        <article class="card">
+          <img class="card-cover" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80" alt="Delhi hotel">
+          <div class="card-body"><div class="stars">★★★★★</div><h3>Delhi Imperial Heights</h3><p>City-luxury hospitality, diplomatic lounges, and curated culinary experiences.</p></div>
+        </article>
+        <article class="card">
+          <img class="card-cover" src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=80" alt="Jaipur hotel">
+          <div class="card-body"><div class="stars">★★★★★</div><h3>Jaipur Heritage Royale</h3><p>Palatial courtyards, heritage interiors, and private villa living.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="rooms" style="background: var(--surface-2)">
+    <div class="container-wide">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Rooms, suites, and villas</h2>
+          <p class="section-copy">Built from your earlier design references, each room type balances premium imagery, booking detail, and quick call-to-action.</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <img class="card-cover" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Deluxe room">
+          <div class="card-body">
+            <h3>Deluxe Ocean Room</h3>
+            <p>Floor-to-ceiling windows, curated minibar, work lounge, and sea view balcony.</p>
+            <div class="meta-row"><div class="price">₹14,500</div><a class="btn" href="reservation.html">Reserve</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-cover" src="https://images.unsplash.com/photo-1505693536704-b38da0a03a9b?auto=format&fit=crop&w=1200&q=80" alt="Suite">
+          <div class="card-body">
+            <h3>Royal Skyline Suite</h3>
+            <p>Separate lounge, panoramic skyline views, luxury bath, and dedicated butler line.</p>
+            <div class="meta-row"><div class="price">₹26,500</div><a class="btn" href="reservation.html">Reserve</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-cover" src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80" alt="Villa">
+          <div class="card-body">
+            <h3>Private Courtyard Villa</h3>
+            <p>Private plunge pool, courtyard dining, handcrafted interiors, and family concierge.</p>
+            <div class="meta-row"><div class="price">₹31,500</div><a class="btn" href="reservation.html">Reserve</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container-wide">
+      <div class="stats">
+        <div class="stat"><div class="number">18+</div><div>Luxury room categories</div></div>
+        <div class="stat"><div class="number">5</div><div>Flagship branches</div></div>
+        <div class="stat"><div class="number">24/7</div><div>Concierge and support</div></div>
+        <div class="stat"><div class="number">4.8/5</div><div>Average guest satisfaction</div></div>
+      </div>
+
+      <div class="grid-2" style="margin-top:28px; align-items:start;">
+        <div class="panel">
+          <h3>Guest experience services</h3>
+          <ul class="feature-list">
+            <li><span>Airport pickup and chauffeur desk</span><strong>Available chain-wide</strong></li>
+            <li><span>In-room fine dining and tasting menu</span><strong>Premium</strong></li>
+            <li><span>Spa, wellness, and salon booking</span><strong>By schedule</strong></li>
+            <li><span>Late checkout and fast-track arrival</span><strong>VIP priority</strong></li>
+            <li><span>Corporate meeting and event support</span><strong>On request</strong></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Why this website structure works</h3>
+          <p>It reflects the Phase 1 blueprint you outlined: a public discovery experience, customer reservation journey, and enterprise admin flow. The same visual language runs through customer and staff interfaces, making the brand feel premium and unified.</p>
+          <div class="banner-note">
+            Images used across the website include luxury hotel exteriors, room interiors, spa visuals, fine dining, wellness spaces, and destination photography to keep every screen polished and premium.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="container-wide gallery">
+      <img class="large" src="https://images.unsplash.com/photo-1501117716987-c8e1ecb2104a?auto=format&fit=crop&w=1200&q=80" alt="Hotel pool">
+      <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80" alt="Suite">
+      <img src="https://images.unsplash.com/photo-1522798514-97ceb8c4f1c8?auto=format&fit=crop&w=1200&q=80" alt="Lounge">
+      <img src="https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1200&q=80" alt="Dining">
+      <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80" alt="Spa">
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container-wide footer-grid">
+      <div>
+        <div class="brand"><span class="brand-badge">L</span><span>Lumi Stays</span></div>
+        <p>Luxury hotel chain website prototype with customer, admin, analytics, booking, billing, and support screens.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <p><a href="reservation.html">Book now</a></p>
+        <p><a href="login.html">Login</a></p>
+        <p><a href="register.html">Create account</a></p>
+      </div>
+      <div>
+        <h4>Dashboards</h4>
+        <p><a href="user_dashboard.html">Customer dashboard</a></p>
+        <p><a href="admin_dashboard.html">Admin dashboard</a></p>
+        <p><a href="analytics.html">Analytics</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>reservations@lumistays.com</p>
+        <p>+91 63886 56353</p>
+        <p>Kolkata · Mumbai · Goa</p>
+      </div>
+    </div>
+    <div class="container-wide footer-bottom">© <span id="year"></span> Lumi Stays. Crafted for a multi-branch 5-star hotel management project.</div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/lumi.js"></script>
+</body>
+</html>

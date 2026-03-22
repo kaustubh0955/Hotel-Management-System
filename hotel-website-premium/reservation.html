@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservation | Lumi Stays</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container-wide navbar">
+      <a class="brand" href="index.html"><span class="brand-badge">L</span><span>Lumi Stays</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="reservation.html">Reserve</a>
+        <a href="user_dashboard.html">Dashboard</a>
+      </nav>
+      <div class="nav-actions">
+        <select class="branch-selector" data-branch-selector>
+          <option>Goa Seaside Lumi</option>
+          <option>Mumbai Grand Marina</option>
+          <option>Delhi Imperial Heights</option>
+          <option>Jaipur Heritage Royale</option>
+          <option>Kolkata Riverside Palace</option>
+        </select>
+        <button class="icon-btn" onclick="toggleTheme()">☾</button>
+        <a class="btn-outline" href="login.html">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container-wide">
+      <div class="breadcrumbs">Home / Reservation</div>
+      <h1>Luxury room reservation</h1>
+      <p>Choose destination, stay dates, and premium experiences across the Lumi chain. Now with branch-wise live room filtering and smarter booking validation.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-wide layout">
+      <aside class="panel">
+        <h3>Featured stay inclusions</h3>
+        <ul class="feature-list">
+          <li><span>Daily breakfast experience</span><strong>Included</strong></li>
+          <li><span>Private concierge support</span><strong>24/7</strong></li>
+          <li><span>Airport transfer add-on</span><strong>Optional</strong></li>
+          <li><span>Late checkout request</span><strong>Subject to availability</strong></li>
+        </ul>
+        <img class="preview-image" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Signature reservation suite" style="margin-top:18px;">
+        <img class="preview-image" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80" alt="Luxury destination lounge" style="margin-top:18px;">
+      </aside>
+
+      <div class="panel">
+        <div class="section-head" style="margin-bottom:18px;">
+          <div>
+            <h2 class="section-title" style="font-size:30px;">Complete your booking</h2>
+            <p class="section-copy">Your reservation will be stored locally for demo purposes and shown on the dashboard and admin panels.</p>
+          </div>
+          <div class="price" id="bookingTotal">₹0</div>
+        </div>
+
+        <form id="reservationForm" class="form-grid">
+          <div class="field full"><label for="destination">Hotel branch</label>
+            <select id="destination" name="destination">
+              <option>Goa Seaside Lumi</option>
+              <option>Mumbai Grand Marina</option>
+              <option>Delhi Imperial Heights</option>
+              <option>Jaipur Heritage Royale</option>
+              <option>Kolkata Riverside Palace</option>
+            </select>
+          </div>
+          <div class="field"><label for="checkin">Check-In</label><input type="date" id="checkin" name="checkin" required></div>
+          <div class="field"><label for="checkout">Check-Out</label><input type="date" id="checkout" name="checkout" required></div>
+          <div class="field"><label for="guests">Guests</label><select id="guests" name="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
+          <div class="field"><label for="roomType">Preferred category</label><select id="roomType" name="roomType"><option value="">Any available room</option><option>Deluxe</option><option>Suite</option><option>Villa</option><option>Club</option></select></div>
+
+          <div class="availability-toolbar full">
+            <div class="field"><label for="priceFilter">Price range</label>
+              <select id="priceFilter" name="priceFilter">
+                <option value="all">Any budget</option>
+                <option value="18000">Up to ₹18,000</option>
+                <option value="26000">Up to ₹26,000</option>
+                <option value="35000">Luxury up to ₹35,000</option>
+              </select>
+            </div>
+            <div class="field"><label for="viewFilter">Preferred view</label>
+              <select id="viewFilter" name="viewFilter">
+                <option value="all">Any view</option>
+                <option value="Ocean">Ocean</option>
+                <option value="Skyline">Skyline</option>
+                <option value="Garden">Garden</option>
+                <option value="Heritage">Heritage</option>
+                <option value="River">River</option>
+              </select>
+            </div>
+            <div class="field checkbox-field"><label>&nbsp;</label><label class="checkbox-chip"><input type="checkbox" id="flexibleOnly"> Free cancellation only</label></div>
+          </div>
+
+          <div class="field full"><label for="servicePackage">Service Package</label><select id="servicePackage" name="servicePackage"><option>None</option><option>Airport Transfer</option><option>Spa Access</option><option>Fine Dining</option><option>Luxury Bundle</option></select></div>
+          <div class="field full"><label for="request">Special Requests</label><textarea id="request" name="request" placeholder="Early check-in, anniversary setup, airport pickup timing, dietary notes..."></textarea></div>
+          <div class="field full"><div id="validationMessage" class="validation-message" aria-live="polite"></div></div>
+          <div class="field full"><button class="btn" type="submit" style="width:100%;">Confirm Reservation</button></div>
+        </form>
+
+        <div class="availability-section">
+          <div class="availability-head">
+            <div>
+              <h3>Branch-wise room availability</h3>
+              <p>Available rooms update automatically based on your branch, dates, guest count, and filters.</p>
+            </div>
+            <div class="availability-badge" id="availabilityBadge">0 rooms available</div>
+          </div>
+          <div class="availability-summary" id="availabilitySummary"></div>
+          <div class="room-results" id="roomResults"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/reservation.js"></script>
+</body>
+</html>
