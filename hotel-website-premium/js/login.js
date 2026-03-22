@@ -1,26 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('loginForm');
-  const errorBox = document.getElementById('loginError');
-  const demoInfo = document.getElementById('demoInfo');
-  if (demoInfo) {
-    demoInfo.innerHTML = 'Customer demo: <b>guest101 / guest123</b><br>Admin demo: <b>admin101 / admin123</b>';
+  const noticeBox = document.getElementById('loginNotice');
+
+  if (noticeBox) {
+    noticeBox.className = 'notice';
+    noticeBox.innerHTML = 'Customer demo: <b>guest101 / guest123</b><br>Admin demo: <b>admin101 / admin123</b>';
   }
 
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
-    const userId = document.getElementById('loginUser').value.trim();
-    const password = document.getElementById('loginPass').value.trim();
-    const role = document.getElementById('role').value;
+
+    const userIdField = document.getElementById('loginId') || document.getElementById('loginUser');
+    const passwordField = document.getElementById('loginPass');
+    const roleField = document.getElementById('role');
+
+    const userId = userIdField?.value.trim();
+    const password = passwordField?.value.trim();
+    const role = roleField?.value;
+
     const users = App.get('users');
-    const found = users.find(u => u.userId === userId && u.password === password && u.role === role);
+    const found = users.find((u) => {
+      const idMatch = (u.userId || '').toLowerCase() === (userId || '').toLowerCase();
+      const passwordMatch = u.password === password;
+      const roleMatch = !role || u.role === role || (role === 'admin' && ['admin', 'staff'].includes(u.role));
+      return idMatch && passwordMatch && roleMatch;
+    });
 
     if (!found) {
-      errorBox.className = 'notice error';
-      errorBox.textContent = 'Invalid credentials. Use the demo account or a registered account.';
+      if (noticeBox) {
+        noticeBox.className = 'notice error';
+        noticeBox.textContent = 'Invalid credentials. Use guest101 / guest123 for Customer or admin101 / admin123 for Admin.';
+      }
       return;
     }
 
     localStorage.setItem('currentUser', JSON.stringify(found));
-    window.location.href = found.role === 'admin' ? 'admin_dashboard.html' : 'user_dashboard.html';
+
+    if (noticeBox) {
+      noticeBox.className = 'notice success';
+      noticeBox.textContent = `Welcome back, ${found.name}. Redirecting...`;
+    }
+
+    setTimeout(() => {
+      window.location.href = found.role === 'admin' ? 'admin_dashboard.html' : 'user_dashboard.html';
+    }, 350);
   });
 });
