@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guest Services | Lumi Stays</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><span class="brand-badge">L</span><span>Lumi Stays</span></a>
+      <a href="user_dashboard.html">Dashboard</a>
+      <a href="reservation.html">Reserve</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="history.html">History</a>
+      <a href="billing.html">Billing</a>
+      <a href="support.html">Support</a>
+      <a class="active" href="services.html">Services</a>
+      <a href="#" data-logout>Logout</a>
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div class="topbar-card">Premium guest services</div>
+        <div class="action-row"><button class="icon-btn" data-theme-toggle onclick="toggleTheme()">☾</button><a class="btn" href="support.html">Request concierge</a></div>
+      </div>
+      <div class="grid-3">
+        <article class="card"><img class="card-cover" src="images/dining.jpg" alt="Dining"><div class="card-body"><h3>In-Room Dining</h3><p>Tasting menus, private breakfast, and chef-curated signature plates.</p></div></article>
+        <article class="card"><img class="card-cover" src="images/branch.jpg" alt="Transfer"><div class="card-body"><h3>Airport Transfers</h3><p>Luxury sedan and SUV pickups with real-time concierge coordination.</p></div></article>
+        <article class="card"><img class="card-cover" src="images/spa.jpg" alt="Spa"><div class="card-body"><h3>Spa & Wellness</h3><p>Wellness rituals, steam suites, and holistic recovery experiences.</p></div></article>
+      </div>
+      <div class="panel" style="margin-top:22px;">
+        <h3>Service menu</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Service</th><th>Estimated Availability</th><th>Price</th></tr></thead>
+            <tbody id="servicesTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/theme.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = App.requireAuth(['user','admin']);
+      if (!user) return;
+      App.bindLogout();
+      const body = document.getElementById('servicesTable');
+      body.innerHTML = App.get('services').map(item => `<tr><td>${item.service}</td><td>${item.eta}</td><td>${App.formatCurrency(item.price)}</td></tr>`).join('');
+    });
+  </script>
+</body>
+</html>

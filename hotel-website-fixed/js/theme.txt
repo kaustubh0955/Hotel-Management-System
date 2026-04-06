@@ -1,0 +1,26 @@
+function applyThemeUI() {
+  const isDark = document.body.classList.contains('dark');
+  document.querySelectorAll('.icon-btn[data-theme-toggle], .icon-btn[onclick*="toggleTheme"]').forEach(btn => {
+    btn.textContent = isDark ? '☀' : '☾';
+    btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    btn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+  });
+}
+
+(function initTheme() {
+  const saved = localStorage.getItem('theme') || 'light';
+  if (saved === 'dark') {
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('dark');
+      applyThemeUI();
+    });
+  } else {
+    document.addEventListener('DOMContentLoaded', applyThemeUI);
+  }
+})();
+
+function toggleTheme() {
+  document.body.classList.toggle('dark');
+  localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+  applyThemeUI();
+}

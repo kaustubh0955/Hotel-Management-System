@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Lumi Stays</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="login-shell">
+    <div class="auth-card">
+      <div class="auth-visual" style="background-image:linear-gradient(rgba(8,18,30,.18), rgba(8,18,30,.40)), url('images/register-side.jpg')"></div>
+      <section class="auth-form">
+        <div class="auth-topbar">
+          <a href="landing.html" class="back-home">← Back to Hotel Website</a>
+          <div class="auth-brand">Lumi Seaside Bliss</div>
+        </div>
+        <div class="brand" style="margin-bottom:18px;"><span class="brand-badge">L</span><span>Lumi Stays</span></div>
+        <div class="stars">★★★★★</div>
+        <h1>Create your Lumi profile</h1>
+        <p class="muted">Register once to book across all branches, unlock loyalty rewards, and manage premium stays.</p>
+        <div id="registerNotice"></div>
+        <form id="registerForm" class="form-grid">
+          <div class="field"><label>Name</label><input name="name" type="text" required></div>
+          <div class="field"><label>Email</label><input name="email" type="email" required></div>
+          <div class="field"><label>Mobile</label><input name="mobile" type="text" required></div>
+          <div class="field"><label>User ID</label><input name="userId" type="text" required></div>
+          <div class="field full"><label>Address</label><input name="address" type="text" placeholder="City, address or preferred branch"></div>
+          <div class="field"><label>Password</label><input name="password" type="password" required></div>
+          <div class="field"><label>Confirm Password</label><input name="confirmPassword" type="password" required></div>
+          <div class="field full"><button class="btn" type="submit" style="width:100%;">Create Account</button></div>
+        </form>
+      </section>
+    </div>
+  </div>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

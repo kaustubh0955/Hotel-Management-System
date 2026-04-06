@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Lumi Stays</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><span class="brand-badge">L</span><span>Lumi Admin</span></a>
+      <a class="active" href="admin_dashboard.html">Dashboard</a>
+      <a href="bookings.html">Reservations</a>
+      <a href="roomstatus.html">Room Status</a>
+      <a href="analytics.html">Analytics</a>
+      <a href="branch_management.html">Branches</a>
+      <a href="support.html">Support Desk</a>
+      <a href="#" data-logout>Logout</a>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div class="topbar-card">Welcome, <strong id="username"></strong> · Managing <strong data-selected-branch>Goa Seaside Lumi</strong></div>
+        <div class="action-row">
+          <select class="branch-selector" data-branch-selector>
+            <option>Goa Seaside Lumi</option>
+            <option>Mumbai Grand Marina</option>
+            <option>Delhi Imperial Heights</option>
+            <option>Jaipur Heritage Royale</option>
+            <option>Kolkata Riverside Palace</option>
+          </select>
+          <button class="icon-btn" data-theme-toggle onclick="toggleTheme()">☾</button>
+          <a class="btn" href="analytics.html">Open analytics</a>
+        </div>
+      </div>
+
+      <div class="dashboard-banner" style="background-image: linear-gradient(90deg, rgba(8,20,35,0.7), rgba(8,20,35,0.2)), url('images/history.jpg');">
+        <h2 style="margin:0; font-size:34px;">Chain-wide operations at a glance.</h2>
+        <p style="max-width:620px; line-height:1.8;">Track occupancy, revenue, branch performance, rooms under maintenance, and support requests from a centralized control panel.</p>
+      </div>
+
+      <div class="kpi-grid" style="margin-top:22px;">
+        <div class="kpi-card"><div class="kpi-title">Bookings</div><div class="kpi-value" id="bookingCount">0</div><div class="muted">All branches</div></div>
+        <div class="kpi-card"><div class="kpi-title">Available Rooms</div><div class="kpi-value" id="activeRooms">0</div><div class="muted">Ready for allocation</div></div>
+        <div class="kpi-card"><div class="kpi-title">Revenue Snapshot</div><div class="kpi-value" id="amountCount">₹0</div><div class="muted">From stored booking data</div></div>
+        <div class="kpi-card"><div class="kpi-title">Branches</div><div class="kpi-value" id="branchCount">0</div><div class="muted">Managed centrally</div></div>
+      </div>
+
+      <div class="columns-2">
+        <div class="panel">
+          <h3>Branch performance</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>City</th><th>Hotel</th><th>Occupancy</th><th>Revenue</th><th>Status</th></tr></thead>
+              <tbody id="branchTable"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Operations summary</h3>
+          <ul class="feature-list">
+            <li><span>Guest satisfaction score</span><strong>4.8 / 5</strong></li>
+            <li><span>Open support tickets</span><strong id="openTickets">0</strong></li>
+            <li><span>Maintenance flagged rooms</span><strong>1</strong></li>
+            <li><span>VIP arrivals this week</span><strong>6</strong></li>
+            <li><span>Executive suites ready for check-in</span><strong>12</strong></li>
+          </ul>
+          <div class="banner-note" style="margin-top:18px;">
+            Monitor reservations, branch readiness, guest support, and revenue from one unified command center with a branch-wise selector and premium floating image interactions.
+          </div>
+          <div class="grid-2" style="margin-top:16px;">
+            <img class="card-cover" style="height:160px;" src="images/admin.jpg" alt="Luxury admin operations view">
+            <img class="card-cover" style="height:160px;" src="images/dining.jpg" alt="Luxury hotel management overview">
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

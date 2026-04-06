@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics | Lumi Stays</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><span class="brand-badge">L</span><span>Lumi Admin</span></a>
+      <a href="admin_dashboard.html">Dashboard</a>
+      <a href="bookings.html">Reservations</a>
+      <a href="roomstatus.html">Room Status</a>
+      <a class="active" href="analytics.html">Analytics</a>
+      <a href="branch_management.html">Branches</a>
+      <a href="#" data-logout>Logout</a>
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div class="topbar-card">Chain analytics · <strong id="username"></strong> · <strong data-selected-branch>Goa Seaside Lumi</strong></div>
+        <div class="action-row"><select class="branch-selector" data-branch-selector><option>Goa Seaside Lumi</option><option>Mumbai Grand Marina</option><option>Delhi Imperial Heights</option><option>Jaipur Heritage Royale</option><option>Kolkata Riverside Palace</option></select><button class="icon-btn" data-theme-toggle onclick="toggleTheme()">☾</button></div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-title">Occupancy</div><div class="kpi-value" id="occupancyMetric">88%</div><div class="metric-bar"><span style="width:88%"></span></div></div>
+        <div class="kpi-card"><div class="kpi-title">Revenue</div><div class="kpi-value" id="revenueMetric">₹2.32 Cr</div><div class="metric-bar"><span style="width:80%"></span></div></div>
+        <div class="kpi-card"><div class="kpi-title">Guest Rating</div><div class="kpi-value" id="guestMetric">4.8/5</div><div class="metric-bar"><span style="width:96%"></span></div></div>
+        <div class="kpi-card"><div class="kpi-title">Peak Market</div><div class="kpi-value" style="font-size:28px;">Goa</div><div class="muted">Highest demand this cycle</div></div>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <canvas id="bookingChart" width="900" height="460" style="width:100%; border-radius:18px;"></canvas>
+        </div>
+        <div class="panel">
+          <h3>Executive insight</h3>
+          <ul class="feature-list">
+            <li><span>Weekend demand uplift</span><strong>+13%</strong></li>
+            <li><span>Average daily rate</span><strong>₹19,400</strong></li>
+            <li><span>Luxury bundle adoption</span><strong>41%</strong></li>
+            <li><span>Best performing branch</span><strong>Mumbai Grand Marina</strong></li>
+          </ul>
+          <img src="images/dining.jpg" alt="Analytics visual" class="preview-image" style="margin-top:18px;">
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/analytics.js"></script>
+</body>
+</html>

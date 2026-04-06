@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Complete | Lumi Stays</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section class="section">
+    <div class="container-wide" style="max-width:760px;">
+      <div class="panel" style="text-align:center; padding:50px;">
+        <div class="stars">★★★★★</div>
+        <h1 style="margin-bottom:6px;">Registration successful</h1>
+        <p class="muted">Your Lumi Stays profile is ready. Use the generated user ID below to sign in.</p>
+        <div class="price" id="randomId" style="margin:18px 0;">—</div>
+        <div class="action-row" style="justify-content:center;">
+          <a class="btn" href="login.html">Login now</a>
+          <a class="btn-outline" href="index.html">Return to website</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>document.getElementById('randomId').textContent = localStorage.getItem('generatedID') || 'guest101';</script>
+</body>
+</html>
